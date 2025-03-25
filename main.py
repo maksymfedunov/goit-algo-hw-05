@@ -1,5 +1,8 @@
 def input_error(func):
     def inner(*args, **kwargs):
+        if not args :
+            return "Please check the presence of the arguments"
+
         try:
             return func(*args, **kwargs)
         except ValueError:
